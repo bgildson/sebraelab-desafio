@@ -1,32 +1,32 @@
 @import 'src/theme.scss';
 
 mat-card {
-  height: 100%;
-  transition: ease .3s;
+  display: flex;
 
-  h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 0;
-  }
   .info-icon {
     display: flex;
-    align-items: top;
-    margin-bottom: 10px;
+    align-items: center;
 
     mat-icon {
       margin-right: 5px;
       color: mat-color($sebraelab-desafio-primary-palette, 300);
     }
+  }
+  .left,
+  .right {
+    padding: 0;
+  }
+  .left {
+    margin-right: 10px;
 
-    p {
+    h2 {
       margin: 0;
     }
   }
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 7px 4px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  .right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (max-width: 599px) {
