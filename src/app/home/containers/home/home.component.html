@@ -1,23 +1,9 @@
-<load-more
-  [loadingMore]="loading$ | async"
-  [loadMoreWhenMissing]="200"
-  (load)="onLoad()"
->
-  <div class="breadcrumb">
-    <span class="title">Eventos</span>
-    <span class="spacer"></span>
-    <div class="detail">
-      {{ startDate | date: "EEE, dd 'de' MMMM 'de' yyyy" }}
-    </div>
-  </div>
-
-  <div class="content">
+<load-more [loadingMore]="loading$ | async" [loadMoreWhenMissing]="200" (load)="onLoad()">
+  <div class="container">
     <div class="spinner" *ngIf="loading$ | async">
       <mat-spinner color="primary" diameter="42"></mat-spinner>
     </div>
-    <calendar-event-group
-      *ngFor="let eventsGrouped of eventsGroupeds$ | async"
-      [eventsGroup]="eventsGrouped"
-    ></calendar-event-group>
+    <calendar-event-group *ngFor="let eventsGrouped of eventsGroupeds$ | async" [eventsGroup]="eventsGrouped">
+    </calendar-event-group>
   </div>
 </load-more>
